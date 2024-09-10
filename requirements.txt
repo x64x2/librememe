@@ -5,3 +5,4 @@ numpy
 opencv_python-headless
 pandas
 joblib
+dlib==19.24.0
