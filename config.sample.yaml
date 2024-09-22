@@ -1,0 +1,75 @@
+## Folder where to store all data (database + data) unless overwritten below
+## Default: "data" in the current-working directory
+#DataPath: "data"
+
+## Database connection string
+## For SQLite: `sqlite:/path/to/db` or `/path/to/db`
+## For Postgres: `postgres://user:password@host:port/dbname`
+## Default: `<DataPath>/data.db` (SQLite)
+#Database: ""
+
+## Where to store downloaded data
+## Type can be "local" (folder on local disk) or "s3" (S3-compatible)
+## For "local", the "Location" option is the path where to store data on disk
+## Example of "local":
+#Storage:
+  #Type: local
+  #Location: /path/to/downloaded/data
+## For "s3", the "Location" option is the URL of the S3 endpoint (with auth)
+## Example of "s3":
+#Storage:
+  #Type: s3
+  #Location: https://access_key_id:secret_access_key@bucket.s3.eu-west-2.amazonaws.com
+## Can also use "s3" for Minio or other S3-compatible storage
+## Example of "s3" with Minio etc:
+#Storage:
+  #Type: s3
+  #Location: http://access_key_id:secret_access_key@localhost:9000/bucket
+## Default is storing locally in "<DataPath>"
+
+## Path to the file with auth data
+## Default: auth.yaml in the same folders where config.yaml is found
+#AuthConfigFile: ""
+
+## Options for the exhentai scraper
+exhentai:
+  ## List of profiles to include (optional - default empty)
+  #Include:
+  # - some_user
+
+  ## List of profiles to exclude (optional - default empty)
+  #Exclude:
+  #  - some_other_user
+
+  ## Uncomment to skip scraping posts
+  #SkipPosts: false
+
+  ## Uncomment to skip scraping stories
+  #SkipStories: false
+
+  ## Uncomment to skip scraping messages
+  #SkipMessages: false
+
+## Options for the exhentai.org exhentai importer
+exhentai:
+  ## List of profiles to import
+  ## At least one profile required if not passed as CLI argument
+  Profiles:
+   - some_user
+
+## Options for the exhentai.org Fansly importer
+exhentaiFansly:
+  ## List of profiles to import
+  ## At least one profile required if not passed as CLI argument
+  Profiles:
+   - some_user
+
+## Options for the "serve" command
+Server:
+  ## Port where the server listens on
+  ## Default is 8080
+  #Port: 8080
+
+  ## Uncomment to make the serve command open the database in read-only mode
+  ## Certain features will not work
+  # ReadOnly: true

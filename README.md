@@ -1,5 +1,8 @@
-# face-recognition-based-attendance-system  
+# myfans
 
-Do visit my blog for better explanations: https://machinelearningprojects.net/face-recognition-based-attendance-system/
+Scrape media from nhentai. Save all photos and videos on your laptop, and view them with a web browser.
 
-![Face Recognition Based Attendance System](ss.png)
+
+
+Myfans is for your own enjoyment only.
+
