@@ -1,6 +1,6 @@
 # intro
 
-Scrape media from exhentai and gelbooru. Save all photos and videos on your pc and view them with a web browser.
+Scrape media from exhentai and gelbooru. Save all img on your pc. 
 
 
 ## installation
