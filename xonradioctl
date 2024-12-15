@@ -1,0 +1,3 @@
+#!/bin/sh
+# try 'help' in a xonobo-go cli for commands
+echo $* >>/proc/`cat xonobo-go.pid`/fd/`cat xonobo-go.ctlfd`
