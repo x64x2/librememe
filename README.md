@@ -1,6 +1,6 @@
 # xonobo
 
-Radio service for Xonotic SMB modded server *and* generic music players, with simply some ogg vorbis files.
+radio service for xonotic SMB modded server *and* generic music players, with simply some orgy _ogg_ orbis files.
 
 ## Setup
 
