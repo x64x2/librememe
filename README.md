@@ -1,5 +1,5 @@
 ```
-[+] async pubgm
+[+] async-pubgm
 
 A python wrapper for the PUBGM developer API
 
@@ -10,7 +10,7 @@ check his repo for the rest of the doc
 *sync client is stil available in master branch
 *get the async version from async branch
 
-pip install git+https://github.com/x64x2/asynpubgm
+pip install git+https://github.com/x64x2/async-pubgm
 
 [-] api changes
 *await obj.get() obj.fetch() or obj[x] calls
