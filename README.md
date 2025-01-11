@@ -1,35 +1,32 @@
-# xonobo
+```
+[+] async pubgm
 
-radio service for xonotic SMB modded server *and* generic music players, with simply some orgy _ogg_ orbis files.
+A python wrapper for the PUBGM developer API
 
-## Setup
+async version of https://github.com/ramonsaraiva/pubg-python
+check his repo for the rest of the doc
 
-- Clone repo
-- Run `go build`
-- Move folder of ogg vorbis audio to this folder, name it `orgy`
-- Run `./xonobo-go`, your service is now at http://127.0.0.1:8293/
-- You have a live stream at (bare host) http://127.0.0.1:8296
-- Use your IP for public access
+[-] install
+*sync client is stil available in master branch
+*get the async version from async branch
 
-## Notes for configuration
+pip install git+https://github.com/x64x2/asynpubgm
 
-1. See possible configurations in `config.example.txt`
-2. see `./xonoboctl` for controlling the running process
+[-] api changes
+*await obj.get() obj.fetch() or obj[x] calls
+*you can not longer do "for x in QuerySet", use "for x in await QuerySet.all()"
 
-- For config keys that are supposed to have list of items (`oggdirs`, `lists`), just separate items by space
-- You can have oggdirs path in any form, they are virtualized; but try to don’t have two oggdirs with the same basename (do `oggdirs ogg ../ogg2 /ogg3`, don’t `oggdirs ogg ../ogg /ogg`)
-- Empty string, `0`, `false` and `no` are accepted as “false” value for boolean items
-- Always leave a newline at the end of configuration file
-- Live reload doesn’t work if you have changed host/ports. Restart the process instead
+async def ent():
 
-## Compare to the [Python version](https://codeberg.org/NaitLee/xonobo)
+	pubg = pubg_python.AioPUBG("api_key", shard=pubg_python.Shard.STEAM)
 
-|     | xonobo-go | xonobo-py |
-| --- | --- | --- |
-| Portability | Build and run with Go | Just works if you have Python |
-| Parsing oggs | Goroutines, no (need) cache | Caches, works lazily |
-| Server | Multi-thread and efficient | Single thread, lower efficiency |
-| Controlling | `./xonoboctl reload` | Restart the service |
-| Live Streaming | For generic music players | A specialized web frontend |
+	player = await pubg.players().filter(player_names=["auteuil"])[0]
+	player = await pubg.players().filter(player_names=["auteuil"]).all()
 
-The `vendor` directory contains vendored code that is licensed by other developers.
+	for partial_match in player.matches:
+		match = pubg.matches().get(partial_match.id)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(ent())
+
+```
