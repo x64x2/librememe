@@ -1,7 +1,0 @@
--r base.txt
-
-pytest
-pytest-cov
-requests_mock
-codecov
-flake8
