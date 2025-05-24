@@ -1,5 +1,5 @@
 
-toows is a kox's 2 dimentional snow-flake constructor
+toows is a 2 dimentional snow-flake constructor
 PNG lib is requared for toowspng.c to make output png.
 
 just run
