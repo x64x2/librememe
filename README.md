@@ -9,5 +9,7 @@ just run
 ## architecture
 
 toowoo -- programs to construct 2 and 3 dimentional snowflake.
+
 toowspng -- programs to transform output of toows into PNG file.
+
 rotate -- helps to produce a script for making `rotating' views of snowflake
